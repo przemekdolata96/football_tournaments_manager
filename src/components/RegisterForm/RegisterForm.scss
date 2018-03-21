@@ -1,0 +1,13 @@
+@import '../_variables.scss';
+.login {
+    .login-side {
+        form {
+            #login-button {
+                background-color: $color-green;
+            }
+        }
+        .login-link {
+            margin-top: 70%;
+        }
+    }
+}

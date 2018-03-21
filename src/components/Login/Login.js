@@ -2,11 +2,55 @@ require('normalize.css/normalize.css');
 require('./Login.scss');
 
 import React from 'react';
+import {BrowserRouter as Router, Route, browserHistory} from 'react-router-dom';
+import LoginForm from '../LoginForm/LoginForm';
+import RegisterForm from '../RegisterForm/RegisterForm';
+import RestorePassForm from '../RestorePassForm/RestorePassForm';
+
 
 let image='../../images/football-1274661_1920.jpg';
 
-class AppComponent extends React.Component {
+class Login extends React.Component {
+    constructor(props){
+      super(props)
+
+      this.registerFormHandler=this.registerFormHandler.bind(this);
+      this.loginFormHandler=this.loginFormHandler.bind(this);
+      this.restoreFormHandler=this.restoreFormHandler.bind(this);
+
+      this.state={
+        form:'login'
+      }
+    }
+
+
+    registerFormHandler(){
+      this.setState({
+        form:'register'
+      });
+    }
+    loginFormHandler() {
+      this.setState({
+        form: 'login'
+      });
+    }
+
+    restoreFormHandler() {
+      this.setState({
+        form: 'restore'
+      });
+    }
+
     render() {
+        const form=this.state.form;
+        const formView=null;
+        if(form=='login'){
+          this.formView = <LoginForm register={this.registerFormHandler} restore={this.restoreFormHandler}></LoginForm>;
+        } else if (form == 'register'){
+          this.formView = <RegisterForm login={this.loginFormHandler}></RegisterForm>;
+        }else {
+          this.formView = <RestorePassForm login={this.loginFormHandler}></RestorePassForm>;
+        }
         return (
         <div className = "login" >
           <div className="image-side">
@@ -19,21 +63,16 @@ class AppComponent extends React.Component {
             <img src={image}/>
           </div>
           <div className="login-side">
-              <h1>Zaloguj się</h1>
-            <form action="">
-              <input type="email" name="email"/>
-              <input type="password" name="password"/>
-              <button id="login-button" >Zaloguj się</button>
-              <button id="facebook-button" >Zaloguj się przez Facebook</button>
-            </form>
-              <h5 className="restore-pass-link">Zapomniałeś hasła?</h5>
-              <h5 className="create-account-link">Stwórz konto <i className="fas fa-arrow-right"></i></h5>
+           {this.formView}
+         {/*  <Router>
+                <Route exact path='/' component={Login} />
+          </Router> */}
           </div>
          </div>
         );
     }
 }
 
-AppComponent.defaultProps = {};
+Login.defaultProps = {};
 
-export default AppComponent;
+export default Login;

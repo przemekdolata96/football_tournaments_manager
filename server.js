@@ -6,12 +6,12 @@ const WebpackDevServer = require('webpack-dev-server');
 const config = require('./webpack.config');
 const open = require('open');
 
-var app = require('./db/app');
+/*
 var port = process.env.PORT || 3000;
-
+var app = require('./db/app');
 var server = app.listen(port, function() {
     console.log('Express server listening on port' + port);
-})
+}) */
 
 /**
  * Flag indicating whether webpack compiled for the first time.

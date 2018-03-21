@@ -12,7 +12,10 @@ class AppComponent extends React.Component {
   render() {
     return (
       <Router>
+        <div>
         <Route exact path='/' component={Login} />
+        <Route exact path='/login' component={Login} />
+        </div>
       </Router>
     );
   }

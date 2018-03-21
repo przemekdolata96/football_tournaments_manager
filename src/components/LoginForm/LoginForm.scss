@@ -1,0 +1,19 @@
+@import '../_variables.scss';
+.login {
+    .login-side {
+        form {
+            #login-button {
+                background-color: $color-green;
+            }
+            #facebook-button {
+                background-color: #3b5998;
+            }
+        }
+        .restore-pass-link {
+            margin-top: 50%;
+        }
+        .create-account-link {
+            margin-top: 20%;
+        }
+    }
+}

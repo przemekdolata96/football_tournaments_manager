@@ -14,6 +14,9 @@ let config = Object.assign({}, baseConfig, {
         'webpack/hot/only-dev-server',
         './src/index'
     ],
+    node: {
+        fs: 'empty'
+    },
     cache: true,
     devtool: 'eval-source-map',
     plugins: [
