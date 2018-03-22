@@ -4,6 +4,20 @@
         form {
             #login-button {
                 background-color: $color-green;
+                transition: 1s;
+                border: solid $color-green 3px;
+            }
+            #login-button:hover {
+                background-color: $color-green-hover;
+                transition: 1s;
+            }
+            #register-message-label {
+                min-height: 20px;
+                height: 20px;
+                color: rgb(203, 14, 14);
+                span {
+                    color: white;
+                }
             }
         }
         .login-link {

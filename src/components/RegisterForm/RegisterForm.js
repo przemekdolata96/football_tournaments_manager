@@ -75,7 +75,7 @@ class RegisterForm extends React.Component {
       <div>
         <h1>Zaloguj się</h1>
         <form action="">
-          <label >{message}</label>
+          <label id="register-message-label"><span>&#x2063;</span>{message}</label>
           <input type="email" name="email" placeholder='email' />
           <input type="password" name="password" placeholder='hasło'/>
           <input type="password" name="password-confirm" placeholder='powtórz hasło' />

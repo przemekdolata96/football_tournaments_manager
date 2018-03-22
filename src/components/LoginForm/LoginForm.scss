@@ -7,6 +7,12 @@
             }
             #facebook-button {
                 background-color: #3b5998;
+                border: 3px solid #3b5998;
+                transition: 1s;
+            }
+            #facebook-button:hover {
+                background-color: #22345c;
+                transition: 1s;
             }
         }
         .restore-pass-link {
