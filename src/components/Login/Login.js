@@ -2,7 +2,6 @@ require('normalize.css/normalize.css');
 require('./Login.scss');
 
 import React from 'react';
-import {BrowserRouter as Router, Route, browserHistory} from 'react-router-dom';
 import LoginForm from '../LoginForm/LoginForm';
 import RegisterForm from '../RegisterForm/RegisterForm';
 import RestorePassForm from '../RestorePassForm/RestorePassForm';
@@ -14,16 +13,10 @@ class Login extends React.Component {
     constructor(props){
       super(props)
 
-      this.registerFormHandler=this.registerFormHandler.bind(this);
-      this.loginFormHandler=this.loginFormHandler.bind(this);
-      this.restoreFormHandler=this.restoreFormHandler.bind(this);
-
       this.state={
         form:'login'
       }
     }
-
-
     registerFormHandler(){
       this.setState({
         form:'register'
@@ -45,11 +38,11 @@ class Login extends React.Component {
         const form=this.state.form;
         const formView=null;
         if(form=='login'){
-          this.formView = <LoginForm register={this.registerFormHandler} restore={this.restoreFormHandler}></LoginForm>;
+          this.formView = <LoginForm register={() => this.registerFormHandler()} restore={() => this.restoreFormHandler()}></LoginForm>;
         } else if (form == 'register'){
-          this.formView = <RegisterForm login={this.loginFormHandler}></RegisterForm>;
+          this.formView = <RegisterForm login={() => this.loginFormHandler()}></RegisterForm>;
         }else {
-          this.formView = <RestorePassForm login={this.loginFormHandler}></RestorePassForm>;
+          this.formView = <RestorePassForm login={() => this.loginFormHandler()}></RestorePassForm>;
         }
         return (
         <div className = "login" >
@@ -57,16 +50,13 @@ class Login extends React.Component {
             <div className="title">
             <h1>Zapanuj</h1>
             <h1>Nad</h1>
-            <h1>Własnyn</h1>
+            <h1>Własnym</h1>
             <h1>Turniejem</h1>
             </div>
             <img src={image}/>
           </div>
           <div className="login-side">
            {this.formView}
-         {/*  <Router>
-                <Route exact path='/' component={Login} />
-          </Router> */}
           </div>
          </div>
         );
