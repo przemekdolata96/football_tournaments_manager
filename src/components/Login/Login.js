@@ -45,20 +45,20 @@ class Login extends React.Component {
           this.formView = <RestorePassForm login={() => this.loginFormHandler()}></RestorePassForm>;
         }
         return (
-        <div className = "login" >
-          <div className="image-side">
-            <div className="title">
-            <h1>Zapanuj</h1>
-            <h1>Nad</h1>
-            <h1>Własnym</h1>
-            <h1>Turniejem</h1>
+          <div className="login" >
+            <div className="image-side">
+              <div className="title">
+                <h1>Zapanuj</h1>
+                <h1>Nad</h1>
+                <h1>Własnym</h1>
+                <h1>Turniejem</h1>
+              </div>
+              <img src={image} />
             </div>
-            <img src={image}/>
+            <div className="login-side">
+              {this.formView}
+            </div>
           </div>
-          <div className="login-side">
-           {this.formView}
-          </div>
-         </div>
         );
     }
 }

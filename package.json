@@ -70,17 +70,20 @@
         "webpack-dev-server": "^1.12.0"
     },
     "dependencies": {
-        "@google-cloud/common-grpc": "^0.6.0",
-        "@google-cloud/firestore": "^0.13.0",
-        "bootstrap": "^4.0.0",
+        "bootstrap": "4.0.0",
         "core-js": "^2.0.0",
         "firebase-admin": "^5.11.0",
+        "font-awesome": "4.7.0",
         "forever-agent": "^0.6.1",
         "jquery": "^3.3.1",
+        "material-design-icons": "^3.0.1",
+        "material-design-lite": "^1.3.0",
         "normalize.css": "^4.0.0",
         "popper.js": "^1.14.1",
         "react": "^15.0.0",
         "react-dom": "^15.0.0",
-        "react-router-dom": "^4.2.2"
+        "react-error-overlay": "4.0.0",
+        "react-router-dom": "^4.2.2",
+        "roboto-fontface": "^0.9.0"
     }
 }

@@ -56,23 +56,22 @@ class LoginForm extends React.Component {
         const message = this.state.message;
         return (
           <div>
-              <h1>Zaloguj się</h1>
-              <form action="">
+            <h1>Zaloguj się</h1>
+            <form action="">
               <label id="register-message-label"><span>&#x2063;</span>{message}</label>
               <input type="email" name="email" placeholder="email"
-               onChange={event=> this.setState({email:event.target.value})}/>
+                onChange={event => this.setState({ email: event.target.value })} />
               <input type="password" name="password" placeholder="hasło"
-                onChange={event => this.setState({ password: event.target.value })}/>
-              <button type='button' id="login-button" onClick={()=>this.signIn()} >Zaloguj się</button>
-              <button type='button' id="facebook-button" onClick={()=>this.signInFacebook()}>Zaloguj się przez Facebook</button>
-              </form>
+                onChange={event => this.setState({ password: event.target.value })} />
+              <button type='button' id="login-button" onClick={() => this.signIn()} >Zaloguj się</button>
+              <button type='button' id="facebook-button" onClick={() => this.signInFacebook()}>Zaloguj się przez Facebook</button>
+            </form>
             <h5 className="restore-pass-link" onClick={this.props.restore}>Zapomniałeś hasła?</h5>
-              <h5 className="create-account-link" onClick={this.props.register}>Stwórz konto <i className="fas fa-arrow-right"></i></h5>
+            <h5 className="create-account-link" onClick={this.props.register}>Stwórz konto <i className="fas fa-arrow-right"></i></h5>
           </div>
         );
     }
 }
-
 LoginForm.defaultProps = {};
 
 export default LoginForm;
