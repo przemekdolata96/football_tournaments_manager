@@ -34,18 +34,18 @@ class LoginForm extends React.Component {
   signInFacebook(){
     firebaseApp.auth().signInWithPopup(provider).then(function (result) {
       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-      var token = result.credential.accessToken;
+      //var token = result.credential.accessToken;
       // The signed-in user info.
-      var user = result.user;
+     // var user = result.user;
       // ...
     }).catch(function (error) {
       // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
+      //var errorCode = error.code;
+      //var errorMessage = error.message;
       // The email of the user's account used.
-      var email = error.email;
+     // var email = error.email;
       // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
+      //var credential = error.credential;
       // ...
     });
 
@@ -67,7 +67,7 @@ class LoginForm extends React.Component {
               <button type='button' id="facebook-button" onClick={() => this.signInFacebook()}>Zaloguj się przez Facebook</button>
             </form>
             <h5 className="restore-pass-link" onClick={this.props.restore}>Zapomniałeś hasła?</h5>
-            <h5 className="create-account-link" onClick={this.props.register}>Stwórz konto <i className="fas fa-arrow-right"></i></h5>
+            <h5 className="create-account-link" onClick={this.props.register}>Stwórz konto <i className="fa fa-arrow-right" aria-hidden="true"></i></h5>
           </div>
         );
     }

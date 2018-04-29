@@ -59,7 +59,7 @@ class RegisterForm extends React.Component {
             onChange={event => this.setState({ lname: event.target.value })}/>
           <button type='button' id="login-button" onClick={()=>this.signUp()} >Zarejestruj się</button>
         </form>
-        <h5 className="login-link" onClick={this.props.login}>Zaloguj się <i className="fas fa-arrow-right"></i></h5>
+        <h5 className="login-link" onClick={this.props.login}>Zaloguj się <i className="fa fa-arrow-right" aria-hidden="true"></i></h5>
       </div>
     );
   }

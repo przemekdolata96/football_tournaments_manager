@@ -1,12 +1,15 @@
 /* Base Application Styles */
+@import '~font-awesome/css/font-awesome.min.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+//@import '~material-ui/styles/MuiThemeProvider';
+@import '~material-design-lite/dist/material.green-indigo.min.css';
+
+
+
 
 html,body {
     margin: 0;
     padding: 0;
-    color: #fff;
-    background: #222;
-     font-family: 'Roboto',
-     'Helvetica',
-     sans-serif;
+     font-family: 'Roboto', 'Helvetica',sans-serif;
 
 }
