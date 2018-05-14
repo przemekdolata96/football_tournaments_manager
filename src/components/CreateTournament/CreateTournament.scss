@@ -1,0 +1,25 @@
+.tournament-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 94vh;
+
+    .mdl-grid{
+       // width: 48rem;
+       // height: 30rem;
+        padding: 3rem;
+        box-sizing: border-box;
+    }
+
+    .mdl-cell{
+        text-align: center;
+        padding: 1rem;
+        
+        .min-height{
+            min-height: 10rem;
+            min-width: 20rem;
+        }
+
+    }
+
+}

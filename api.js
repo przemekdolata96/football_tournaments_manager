@@ -12,7 +12,9 @@ var port = process.env.PORT || 3000;        // set our port
 // BASE SETUP
 var mongoose = require('mongoose');
 mongoose.connect(`mongodb://${mongoData.dbuser}:${mongoData.dbpassword}@ds163119.mlab.com:63119/footballtournaments`); // connect to our database
-var Player = require('./api/models/player');
+//var Player = require('./api/models/player');
+var Team = require('./api/models/team');
+var Player = require('./api/models/team');
 // ROUTES FOR OUR API
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
@@ -28,31 +30,51 @@ router.get('/', function (req, res) {
     res.json({ message: 'hooray! welcome to our api!' });
 });
 
-router.route('/players')
+router.route('/teams')
 
     // create a bear (accessed at POST http://localhost:8080/api/bears)
     .post(function (req, res) {
-        var player = new Player({
-            name: req.body.name
+        var team = new Team({
+            name: 'Moj Team',
+            players:[{
+                firstName: 'Przemek',
+                lastName: 'Dolata',
+                number: 7,
+                goals: 5,
+                assistants: 5
+            }]
+            //players: req.body.players
         });      // create a new instance of the Bear model
         //player.name = req.body.name;  // set the bears name (comes from the request)
 
+
+        team.update(
+            { _id: '5ae76ef752baa31da062bee9' },
+            {
+                $push: {
+                    players: {
+                        firstName: 'Cristiano',
+                        lastName: 'Ronaldo',
+                        number: 7,
+                        goals: 5,
+                        assistants: 5
+                    } } }
+        )
         // save the bear and check for errors
-        player.save(function (err) {
+        team.save(function (err) {
             if (err)
                 res.send(err);
 
-            res.json({ message: 'Player created!' });
+            res.json({ message: 'Team created!' });
         });
-
     })
 
    .get(function (req, res) {
-        Player.find(function (err, players) {
+        Team.find(function (err, teams) {
             if (err)
                 res.send(err);
 
-            res.json(players);
+            res.json(teams);
         });
     });
 // more routes for our API will happen here
