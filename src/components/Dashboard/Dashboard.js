@@ -4,6 +4,8 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { firebaseApp, database } from '../firebase';
 import CreateTournament from '../CreateTournament/CreateTournament';
+import ExploreTournaments from '../ExploreTournaments/ExploreTournaments';
+import ManageTournaments from '../ManageTournaments/ManageTournaments';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import createMuiTheme from 'material-ui/styles/createMuiTheme';
 class Dashboard extends React.Component {
@@ -105,10 +107,10 @@ class Dashboard extends React.Component {
         content = <CreateTournament></CreateTournament>
         break;
       case 'manage':
-          content='manage'
+          content=<ManageTournaments></ManageTournaments>
         break;
       case 'explore':
-          content='explore'
+          content=<ExploreTournaments></ExploreTournaments>
         break;
       default:
         content = <CreateTournament></CreateTournament>

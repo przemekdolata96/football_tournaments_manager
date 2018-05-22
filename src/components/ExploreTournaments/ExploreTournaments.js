@@ -1,5 +1,5 @@
 require('normalize.css/normalize.css');
-require('./ManageTournaments.scss');
+require('./ExploreTournaments.scss');
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { firebaseApp, database } from '../firebase';
@@ -9,22 +9,22 @@ import Card from "material-ui/Card/Card";
 import Snackbar from 'material-ui/Snackbar/Snackbar';
 import IconButton from 'material-ui/IconButton/IconButton';
 import Icon from 'material-ui/Icon/Icon';
-class ManageTournaments extends React.Component {
+class ExploreTournaments extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            tournaments: []
+            tournaments:[]
         };
 
         //this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-    componentDidMount() {
+    componentDidMount(){
         this.getsTournaments()
     }
 
     getsTournaments() {
-        database.ref('/tournaments').on('value', (snapshot) => {
+        database.ref('/tournaments').on('value',(snapshot)=>{
 
             const tournaments = [];
 
@@ -36,23 +36,21 @@ class ManageTournaments extends React.Component {
             });
             console.log(tournaments)
 
-            const tournamentCards = tournaments.map(element => {
-                if (firebaseApp.auth().currentUser.uid === element.uid){
-                    return (
-                        <div className="demo-card-image mdl-card mdl-shadow--2dp">
-                            <div className="mdl-card__title mdl-card--expand"></div>
-                            <div className="mdl-card__actions">
-                                <span className="demo-card-image__filename">{element.name}</span>
-                            </div>
+            const tournamentCards=tournaments.map(element => {
+                return (
+                    <div className="demo-card-image mdl-card mdl-shadow--2dp">
+                        <div className="mdl-card__title mdl-card--expand"></div>
+                        <div className="mdl-card__actions">
+                            <span className="demo-card-image__filename">{element.name}</span>
                         </div>
-                    )
-                }
+                    </div>
+                )
             });
 
             this.setState({
-                tournaments: tournamentCards
+                tournaments:tournamentCards
             })
-
+            
         })
     }
 
@@ -67,8 +65,8 @@ class ManageTournaments extends React.Component {
     }
 }
 
-ManageTournaments.defaultProps = {
+ExploreTournaments.defaultProps = {
 };
 
-export default ManageTournaments;
+export default ExploreTournaments;
 

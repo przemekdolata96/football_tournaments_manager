@@ -1,0 +1,30 @@
+#explore {
+
+  .demo-card-image.mdl-card {
+    width: 20rem;
+    height: 20rem;
+    background: url('../../images/artificial-turf.jpg') center / cover;
+  }
+  
+  .demo-card-image>.mdl-card__actions {
+    height: 52px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  
+  .demo-card-image__filename {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .demo-card-image {
+    margin: 1rem;
+  }
+  
+  .explore-container{
+    display: flex;
+    flex-wrap: wrap
+  }
+}
+
