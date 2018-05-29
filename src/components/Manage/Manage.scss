@@ -1,0 +1,45 @@
+@import '../_variables.scss';
+.manage-container{
+   height: 90vh;
+   width: 80vw;
+
+   .team-form{
+       display: flex;
+       justify-content: left;
+        align-items: center;
+
+       .width-40{
+           min-height: 5rem;
+           width: 40%;
+       }
+       .width-20{
+           text-align: center;
+           width: 20%;
+       }
+   }
+
+   .flexbox{
+       width: 100%;
+       max-height: 65vh;
+       min-height: 65vh;
+       display: flex;
+       overflow-y: auto;
+       flex-wrap: wrap;
+       justify-content: center;
+   }
+
+   .mdl-tabs__tab {
+        color: $gray-400 !important;
+
+        &:hover{
+            color:black !important;
+            cursor: pointer;
+            transition: 1s;
+        }
+   }
+
+   .is-active {
+       color: $indigo-500 !important;
+       transition: 1s;
+   }
+}
